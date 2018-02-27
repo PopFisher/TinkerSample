@@ -20,6 +20,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this, R.string.toast_text_base_apk, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, R.string.toast_text_base_apk, Toast.LENGTH_SHORT).show();
+        // 把Toast弹出的文案修改掉
+        Toast.makeText(this, R.string.toast_text_patch_apk, Toast.LENGTH_SHORT).show();
     }
 }

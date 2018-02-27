@@ -2,5 +2,6 @@
     <string name="app_name">TinkerSample</string>
     <string name="btn_text">点击显示Toast</string>
     <string name="toast_text_base_apk">你好这是基线包中的文本</string>
+    <!-- 下面是修复代码 -->
     <string name="toast_text_patch_apk">你好这是补丁包中的文本</string>
 </resources>
