@@ -23,7 +23,8 @@ def gitSha() {
 def javaVersion = JavaVersion.VERSION_1_7
 
 android {
-    compileSdkVersion 21
+    // 这里需要>=23，因为Tinker里面用到的Build.VERSION.PREVIEW_SDK_INT是api23才加入的
+    compileSdkVersion 23
     buildToolsVersion "26.0.0"
 
     signingConfigs {
