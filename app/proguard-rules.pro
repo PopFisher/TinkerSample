@@ -21,7 +21,7 @@
 #-renamesourcefileattribute SourceFile
 
 -keepattributes SourceFile,LineNumberTable
+-keep class android.os.** {*;}
 
 -dontwarn com.google.**
-
 -dontwarn com.android.**

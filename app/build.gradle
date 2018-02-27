@@ -1,46 +1,30 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-    if (is_gradle_3()) {
-        implementation fileTree(dir: 'libs', include: ['*.jar'])
-        testImplementation 'junit:junit:4.12'
-        implementation "com.android.support:appcompat-v7:23.1.1"
-        implementation 'com.android.support:design:26.1.0'
-        implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-        implementation("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
-        annotationProcessor("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
-        compileOnly("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
+    provided("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
 
-        implementation "com.android.support:multidex:1.0.1"
-    } else {
-        compile fileTree(dir: 'libs', include: ['*.jar'])
-        testCompile 'junit:junit:4.12'
-        compile "com.android.support:appcompat-v7:23.1.1"
-        compile 'com.android.support:design:26.1.0'
-        compile 'com.android.support.constraint:constraint-layout:1.0.2'
-        compile("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
-        provided("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
-
-        compile "com.android.support:multidex:1.0.1"
-    }
+    compile "com.android.support:multidex:1.0.1"
 }
 
 def gitSha() {
     try {
         String gitRev = 'git rev-parse --short HEAD'.execute(null, project.rootDir).text.trim()
         if (gitRev == null) {
-            throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
+//            throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
         }
         return gitRev
     } catch (Exception e) {
-        throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
+//        throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
     }
 }
 
 def javaVersion = JavaVersion.VERSION_1_7
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 21
+    buildToolsVersion "26.0.0"
 
     signingConfigs {
         release {
@@ -50,7 +34,7 @@ android {
                 keyAlias "testtinker"
                 keyPassword "testtinker"
             } catch (ex) {
-                throw new InvalidUserDataException(ex.toString())
+
             }
         }
 
@@ -65,7 +49,7 @@ android {
     defaultConfig {
         applicationId "com.popfisher.tinkersample"
         minSdkVersion 14
-        targetSdkVersion 22
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0.0"
         /**
