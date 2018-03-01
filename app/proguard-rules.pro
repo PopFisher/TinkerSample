@@ -25,3 +25,4 @@
 
 -dontwarn com.google.**
 -dontwarn com.android.**
+-keep class com.popfisher.tinkersample.SampleApplicationLike

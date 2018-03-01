@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/third-party" />
+            <option value="$PROJECT_DIR$/third-party/aosp-dexutils" />
+            <option value="$PROJECT_DIR$/third-party/bsdiff-util" />
+            <option value="$PROJECT_DIR$/third-party/tinker-ziputils" />
+            <option value="$PROJECT_DIR$/tinker-android" />
+            <option value="$PROJECT_DIR$/tinker-android/tinker-android-anno" />
+            <option value="$PROJECT_DIR$/tinker-android/tinker-android-lib" />
+            <option value="$PROJECT_DIR$/tinker-android/tinker-android-loader" />
+            <option value="$PROJECT_DIR$/tinker-build" />
+            <option value="$PROJECT_DIR$/tinker-build/tinker-patch-cli" />
+            <option value="$PROJECT_DIR$/tinker-build/tinker-patch-gradle-plugin" />
+            <option value="$PROJECT_DIR$/tinker-build/tinker-patch-lib" />
+            <option value="$PROJECT_DIR$/tinker-commons" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

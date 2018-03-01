@@ -3,10 +3,18 @@
 buildscript {
     
     repositories {
+        mavenLocal()
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+        classpath "com.github.dcendents:android-maven-gradle-plugin:1.4.1"
+        // TODO popfisher 下面这个怎么换为使用本地工程代码
         classpath ('com.tencent.tinker:tinker-patch-gradle-plugin:1.9.2')
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -16,8 +24,48 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenLocal()
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
+
+    tasks.withType(Javadoc).all {
+        enabled = false
+        options.setEncoding('UTF-8')
+    }
+}
+
+ext {
+    minSdkVersion = 10
+    compileSdkVersion = 21
+    targetSdkVersion = compileSdkVersion
+    buildToolsVersion = '26.0.0'
+    supportLibVersion = '23.0.1'
+    javaVersion = JavaVersion.VERSION_1_7
+
+    GROUP = 'com.tencent.tinker'
+    VERSION_NAME = "${VERSION_NAME_PREFIX}${VERSION_NAME_SUFFIX}"
+
+    POM_PACKAGING = "pom"
+    POM_DESCRIPTION= "tinker"
+
+    POM_URL = "https://github.com/Tencent/tinker"
+    POM_SCM_URL = "https://github.com/Tencent/tinker.git"
+    POM_ISSUE_URL = 'https://github.com/Tencent/tinker/issues'
+
+    POM_LICENCE_NAME = "BSD License"
+    POM_LICENCE_URL = "https://opensource.org/licenses/BSD-3-Clause"
+    POM_LICENCE_DIST = "repo"
+
+    POM_DEVELOPER_ID="Tencent Wechat"
+    POM_DEVELOPER_NAME="Tencent Wechat, Inc."
+
+    BINTRAY_LICENCE= ['BSD 3-Clause']
+    BINTRAY_ORGANIZATION = "tinker"
+
 }
 
 task clean(type: Delete) {

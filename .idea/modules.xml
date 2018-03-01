@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TinkerSample.iml" filepath="$PROJECT_DIR$/TinkerSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/third-party/aosp-dexutils/aosp-dexutils.iml" filepath="$PROJECT_DIR$/third-party/aosp-dexutils/aosp-dexutils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/third-party/bsdiff-util/bsdiff-util.iml" filepath="$PROJECT_DIR$/third-party/bsdiff-util/bsdiff-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/third-party/third-party.iml" filepath="$PROJECT_DIR$/third-party/third-party.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-android/tinker-android.iml" filepath="$PROJECT_DIR$/tinker-android/tinker-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-android/tinker-android-anno/tinker-android-anno.iml" filepath="$PROJECT_DIR$/tinker-android/tinker-android-anno/tinker-android-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-android/tinker-android-lib/tinker-android-lib.iml" filepath="$PROJECT_DIR$/tinker-android/tinker-android-lib/tinker-android-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-android/tinker-android-loader/tinker-android-loader.iml" filepath="$PROJECT_DIR$/tinker-android/tinker-android-loader/tinker-android-loader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-build/tinker-build.iml" filepath="$PROJECT_DIR$/tinker-build/tinker-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-commons/tinker-commons.iml" filepath="$PROJECT_DIR$/tinker-commons/tinker-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-build/tinker-patch-cli/tinker-patch-cli.iml" filepath="$PROJECT_DIR$/tinker-build/tinker-patch-cli/tinker-patch-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-build/tinker-patch-gradle-plugin/tinker-patch-gradle-plugin.iml" filepath="$PROJECT_DIR$/tinker-build/tinker-patch-gradle-plugin/tinker-patch-gradle-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinker-build/tinker-patch-lib/tinker-patch-lib.iml" filepath="$PROJECT_DIR$/tinker-build/tinker-patch-lib/tinker-patch-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/third-party/tinker-ziputils/tinker-ziputils.iml" filepath="$PROJECT_DIR$/third-party/tinker-ziputils/tinker-ziputils.iml" />
+    </modules>
+  </component>
+</project>

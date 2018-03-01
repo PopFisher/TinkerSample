@@ -2,8 +2,10 @@ apply plugin: 'com.android.application'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
-    provided("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+    compile project(':tinker-android:tinker-android-lib')
+    provided project(':tinker-android:tinker-android-anno')
+//    compile("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
+//    provided("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
 
     compile "com.android.support:multidex:1.0.1"
 }
@@ -24,7 +26,7 @@ def javaVersion = JavaVersion.VERSION_1_7
 
 android {
     // 这里需要>=23，因为Tinker里面用到的Build.VERSION.PREVIEW_SDK_INT是api23才加入的
-    compileSdkVersion 23
+    compileSdkVersion 21
     buildToolsVersion "26.0.0"
 
     signingConfigs {
@@ -102,7 +104,7 @@ ext {
     //for some reason, you may want to ignore tinkerBuild, such as instant run debug build?
     tinkerEnabled = true
 
-    baseApk = "app-debug-0227-15-58-35"
+    baseApk = "app-release-0301-18-06-44"
     //for normal build
     //old apk file to build patch apk
     tinkerOldApkPath = "${bakPath}/${baseApk}.apk"
