@@ -41,62 +41,64 @@ def getBintrayKey() {
     return hasProperty('BINTRAY_APIKEY') ? BINTRAY_APIKEY : readPropertyFromLocalProperties('BINTRAY_APIKEY')
 }
 
-group = 'group-test'
-version = '0.0.1'
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: uri('./repo'))
-            //snapshotRepository(url: uri('./snapshotRepo'))
-        }
-    }
-}
-
+//group = 'group-test'
+//version = '0.0.1'
 //uploadArchives {
 //    repositories {
 //        mavenDeployer {
-//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-//
-//            pom.groupId = GROUP
-//            pom.artifactId = POM_ARTIFACT_ID
-//            pom.version = version
-//
+//            repository(url: uri('./repo'))
+//            //snapshotRepository(url: uri('./snapshotRepo'))
+//        }
+//    }
+//}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            pom.groupId = "test"
+            pom.artifactId = POM_ARTIFACT_ID
+            pom.version = version
+
+            repository(url: uri('./repo'))
+
 //            repository(url: getReleaseRepositoryUrl()) {
 //                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
 //            }
 //            snapshotRepository(url: getSnapshotRepositoryUrl()) {
 //                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
 //            }
-//
-//            pom.project {
-//                name POM_NAME
-//                packaging POM_PACKAGING
-//                description POM_DESCRIPTION
-//                url POM_URL
-//
-//                scm {
-//                    url POM_SCM_URL
-//                }
-//
-//                licenses {
-//                    license {
-//                        name POM_LICENCE_NAME
-//                        url POM_LICENCE_URL
-//                        Distribution POM_LICENCE_DIST
-//                    }
-//                }
-//
-//                developers {
-//                    developer {
-//                        id POM_DEVELOPER_ID
-//                        name POM_DEVELOPER_NAME
-//                    }
-//                }
-//            }
-//
-//        }
-//    }
-//}
+
+            pom.project {
+                name POM_NAME
+                packaging POM_PACKAGING
+                description POM_DESCRIPTION
+                url POM_URL
+
+                scm {
+                    url POM_SCM_URL
+                }
+
+                licenses {
+                    license {
+                        name POM_LICENCE_NAME
+                        url POM_LICENCE_URL
+                        Distribution POM_LICENCE_DIST
+                    }
+                }
+
+                developers {
+                    developer {
+                        id POM_DEVELOPER_ID
+                        name POM_DEVELOPER_NAME
+                    }
+                }
+            }
+
+        }
+    }
+}
 
 bintray {
     user = getBintrayUser()
