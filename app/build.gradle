@@ -14,11 +14,11 @@ def gitSha() {
     try {
         String gitRev = 'git rev-parse --short HEAD'.execute(null, project.rootDir).text.trim()
         if (gitRev == null) {
-//            throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
+            throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
         }
         return gitRev
     } catch (Exception e) {
-//        throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
+        throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
     }
 }
 
